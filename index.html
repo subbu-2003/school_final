@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Venkateshwara Vidyalaya Nursery & Primary School – Virudhunagar</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" onclick="showSite()">
+    <div class="logo-emblem">V</div>
+    <div class="logo-txt">
+      <span class="logo-name">Venkateshwara Vidyalaya</span>
+      <span class="logo-sub">Nursery & Primary School · Virudhunagar</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link" onclick="closeNav()">Home</a></li>
+    <li><a href="#about" class="nav-link" onclick="closeNav()">About</a></li>
+    <li><a href="#facilities" class="nav-link" onclick="closeNav()">Facilities</a></li>
+    <li><a class="nav-link" onclick="openGalleryPage();closeNav()">Gallery</a></li>
+    <li><a href="#admissions" class="nav-link" onclick="closeNav()">Admissions</a></li>
+    <li><a class="nav-link" onclick="openStaffPage();closeNav()">Staff</a></li>
+    <li><a href="#contact" class="nav-link" onclick="closeNav()">Contact</a></li>
+    <li><span class="nav-link nav-erp" onclick="openERP()">📊 ERP Login</span></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ====== SITE VIEW ====== -->
+<div id="site-view">
+
+<!-- HOME -->
+<section id="home" style="padding-top:var(--nav-h)">
+  <div class="hero">
+    <div class="hero-bg"></div>
+
+    <!-- School Real Image Section -->
+    <div class="school-image-showcase">
+      <div class="school-img-main">
+        <div class="school-img-card img-building">
+          <div class="img-overlay">
+            <span class="img-emoji">🏫</span>
+            <div class="img-label">Our School Building</div>
+          </div>
+          <div class="img-shimmer"></div>
+        </div>
+        <div class="school-img-side">
+          <div class="school-img-card img-students">
+            <div class="img-overlay"><span class="img-emoji">👨‍🎓</span><div class="img-label">Students</div></div>
+            <div class="img-shimmer"></div>
+          </div>
+          <div class="school-img-card img-class">
+            <div class="img-overlay"><span class="img-emoji">📚</span><div class="img-label">Classrooms</div></div>
+            <div class="img-shimmer"></div>
+          </div>
+          <div class="school-img-card img-events">
+            <div class="img-overlay"><span class="img-emoji">🎭</span><div class="img-label">Annual Day</div></div>
+            <div class="img-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-badge">🙏 Est. 1998 · Virudhunagar</div>
+    <h1 class="hero-title">Venkateshwara<br><span>Vidyalaya</span></h1>
+    <p class="hero-school">Nursery & Primary School – Virudhunagar</p>
+    <p class="hero-sub">Where every child blossoms with knowledge, values, and confidence. Affiliated to Tamil Nadu State Board.</p>
+    <div class="hero-btns">
+      <button class="btn-saffron" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Apply for Admission</button>
+      <button class="btn-outline-w" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Know More</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" data-target="26">0</div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat"><div class="stat-num" data-target="850">0</div><div class="stat-label">Students Enrolled</div></div>
+      <div class="stat"><div class="stat-num" data-target="48">0</div><div class="stat-label">Dedicated Staff</div></div>
+      <div class="stat"><div class="stat-num" data-target="100">0</div><div class="stat-label">% Pass Rate</div></div>
+    </div>
+  </div>
+  <div class="highlights">
+    <div class="hcard"><div class="hcard-icon">📚</div><h3>Academic Excellence</h3><p>Curriculum aligned with Tamil Nadu State Board, focusing on strong fundamentals in Tamil, English, Maths & Science from Nursery to Grade 5.</p></div>
+    <div class="hcard"><div class="hcard-icon">🏆</div><h3>Award Winning School</h3><p>Recognized as Best Nursery & Primary School in Virudhunagar District for 4 consecutive years by the State Education Department.</p></div>
+    <div class="hcard"><div class="hcard-icon">🌱</div><h3>Holistic Development</h3><p>Beyond textbooks – yoga, music, drawing, sports and moral value education shape well-rounded individuals from an early age.</p></div>
+    <div class="hcard"><div class="hcard-icon">🤝</div><h3>Parent Partnership</h3><p>Regular parent-teacher meetings, digital attendance alerts, and homework tracking ensure parents stay connected every day.</p></div>
+  </div>
+</section>
+<div class="section-sep"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="page-header"><h2 class="page-title">About Us</h2><p class="page-sub">Our Story, Mission & Vision</p></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3>Our Story</h3>
+      <p>Founded in 1998 by <strong>Thiru. V. Ramamoorthy</strong> with a humble vision of providing quality primary education to children of Virudhunagar and nearby villages, Venkateshwara Vidyalaya has grown from a small nursery class of 25 students into a full-fledged primary institution serving over 850 students.</p>
+      <p>Located at <strong>No. 12, Madurai Road, Virudhunagar – 626 001</strong>, the school serves families across Virudhunagar, Srivilliputhur, Rajapalayam, and surrounding areas with dedicated bus routes.</p>
+      <h3>Our Mission</h3>
+      <p>To nurture every young mind with quality education, strong moral values, and cultural pride – preparing children to be responsible citizens rooted in Tamil heritage and ready for the modern world.</p>
+      <h3>Our Vision</h3>
+      <p>To become the most trusted nursery and primary school in the Virudhunagar district, where every child – regardless of background – receives the foundation they deserve.</p>
+      <div class="info-box">
+        <h4>🏫 School Information</h4>
+        <div class="info-row"><span>Affiliation</span><span>Tamil Nadu State Board</span></div>
+        <div class="info-row"><span>Medium</span><span>Tamil & English Medium</span></div>
+        <div class="info-row"><span>Classes</span><span>Nursery, LKG, UKG, Std I – V</span></div>
+        <div class="info-row"><span>School Code</span><span>TN-VRD-1998-042</span></div>
+        <div class="info-row"><span>UDISE Code</span><span>33270302801</span></div>
+        <div class="info-row"><span>Recognition</span><span>Govt. Aided & Recognised</span></div>
+      </div>
+    </div>
+    <div class="about-values">
+      <h3>Our Core Values</h3>
+      <div class="value-item"><span>🙏</span><div><strong>Respect & Discipline</strong><p>Instilling respect for elders, teachers, and fellow students from day one.</p></div></div>
+      <div class="value-item"><span>💡</span><div><strong>Curiosity & Learning</strong><p>Encouraging questions, creativity, and joyful discovery in every classroom.</p></div></div>
+      <div class="value-item"><span>🇮🇳</span><div><strong>Cultural Pride</strong><p>Celebrating Tamil language, festivals, and heritage as the core of education.</p></div></div>
+      <div class="value-item"><span>⭐</span><div><strong>Excellence</strong><p>High standards in academics, conduct, cleanliness, and character.</p></div></div>
+      <div class="value-item"><span>🤝</span><div><strong>Community</strong><p>Building a family of students, parents, teachers and society together.</p></div></div>
+    </div>
+  </div>
+</section>
+<div class="section-sep"></div>
+
+<!-- FACILITIES -->
+<section id="facilities">
+  <div class="page-header"><h2 class="page-title">Our Facilities</h2><p class="page-sub">Nurturing Environment for Young Learners</p></div>
+  <div class="facilities-grid">
+    <div class="facility-card"><div class="fc-icon">🖥️</div><h3>Smart Classrooms</h3><p>Air-conditioned classrooms with smart boards and projectors for interactive learning from Nursery to Grade 5.</p></div>
+    <div class="facility-card"><div class="fc-icon">📖</div><h3>Children's Library</h3><p>5,000+ age-appropriate Tamil and English books, story books, and picture books to build reading habits from early age.</p></div>
+    <div class="facility-card"><div class="fc-icon">⚽</div><h3>Playground</h3><p>Large, safe playground with swings, slides, and open ground for cricket, kabaddi, kho-kho, and athletics.</p></div>
+    <div class="facility-card"><div class="fc-icon">🎨</div><h3>Drawing & Craft Room</h3><p>Dedicated art room for drawing, painting, and craft activities to encourage artistic expression from an early age.</p></div>
+    <div class="facility-card"><div class="fc-icon">🎵</div><h3>Music & Cultural Room</h3><p>Carnatic music, folk dance, and cultural activity classes to connect children with Tamil heritage and arts.</p></div>
+    <div class="facility-card"><div class="fc-icon">🍽️</div><h3>Mid-Day Meal Kitchen</h3><p>Government-approved hygienic kitchen providing nutritious mid-day meals free of cost for all students daily.</p></div>
+    <div class="facility-card"><div class="fc-icon">🚌</div><h3>School Bus Service</h3><p>GPS-tracked buses covering Virudhunagar town, Sivakasi Road, Aruppukkottai Road, and 12+ routes for safe commute.</p></div>
+    <div class="facility-card"><div class="fc-icon">🏥</div><h3>Medical & First Aid</h3><p>School nurse on campus with regular health check-ups, first aid room, and tie-up with Virudhunagar Government Hospital.</p></div>
+    <div class="facility-card"><div class="fc-icon">🔬</div><h3>Science Activity Corner</h3><p>Hands-on science activity kits and experiments to spark scientific curiosity in young primary school students.</p></div>
+  </div>
+</section>
+<div class="section-sep"></div>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="page-header"><h2 class="page-title">Admissions</h2><p class="page-sub">2025–26 Admissions Now Open</p></div>
+  <div class="admissions-wrapper">
+    <div class="admission-info">
+      <h3>Admission Process</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div><strong>Collect Application</strong><p>Visit school office or download form. No application fee for SC/ST families.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><strong>Submit Documents</strong><p>Birth certificate, transfer certificate (if applicable), Aadhaar card, passport photos & caste certificate.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><strong>Simple Assessment</strong><p>For Std I–V: a basic readiness check. Nursery, LKG, UKG are direct admissions.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div><strong>Parent Interaction</strong><p>Brief meeting with the Headmistress to understand the child's needs and school routines.</p></div></div>
+        <div class="step"><div class="step-num">5</div><div><strong>Confirmation</strong><p>Pay admission fee, collect school kit, uniform details and bus route information.</p></div></div>
+      </div>
+      <div class="fees-box">
+        <h4>Fee Structure (2025–26)</h4>
+        <table class="fee-table">
+          <tr><th>Class</th><th>Annual Fee</th></tr>
+          <tr><td>Nursery</td><td>₹8,500</td></tr>
+          <tr><td>LKG / UKG</td><td>₹10,000</td></tr>
+          <tr><td>Std I – III</td><td>₹12,500</td></tr>
+          <tr><td>Std IV – V</td><td>₹14,000</td></tr>
+          <tr><td>Bus Fee (per term)</td><td>₹2,500 – ₹3,500</td></tr>
+        </table>
+        <p style="font-size:12px;color:#6b7a99;margin-top:10px">* SC/ST/MBC students eligible for full fee concession under Govt. scheme.</p>
+      </div>
+    </div>
+    <div class="admission-form-box">
+      <h3>Quick Enquiry</h3>
+      <div class="enquiry-form">
+        <input type="text" placeholder="Parent / Guardian Name" class="form-input"/>
+        <input type="text" placeholder="Student Name" class="form-input"/>
+        <input type="tel" placeholder="Phone Number" class="form-input"/>
+        <input type="email" placeholder="Email Address (Optional)" class="form-input"/>
+        <select class="form-input">
+          <option value="">Applying for Class</option>
+          <option>Nursery</option><option>LKG</option><option>UKG</option>
+          <option>Std I</option><option>Std II</option><option>Std III</option>
+          <option>Std IV</option><option>Std V</option>
+        </select>
+        <select class="form-input">
+          <option value="">Preferred Medium</option>
+          <option>Tamil Medium</option><option>English Medium</option>
+        </select>
+        <textarea class="form-input" rows="3" placeholder="Any message or query..."></textarea>
+        <button class="btn-saffron" onclick="submitEnquiry()">Submit Enquiry</button>
+      </div>
+      <p id="formSuccess" class="form-success" style="display:none">✅ Thank you! Our team will contact you within 24 hours.</p>
+    </div>
+  </div>
+</section>
+<div class="section-sep"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="page-header"><h2 class="page-title">Contact Us</h2><p class="page-sub">We're Happy to Help</p></div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <div class="contact-card"><span>📍</span><div><strong>Address</strong><p>No. 12, Madurai Road, Near Arulmigu Murugan Temple,<br>Virudhunagar – 626 001, Tamil Nadu, India.</p></div></div>
+      <div class="contact-card"><span>📞</span><div><strong>Phone</strong><p>+91 4562 – 230 145 (School Office)<br>+91 94432 85610 (Admissions – WhatsApp)</p></div></div>
+      <div class="contact-card"><span>📧</span><div><strong>Email</strong><p>info@venkateshwaravidyalaya.edu.in<br>admissions@venkateshwaravidyalaya.edu.in</p></div></div>
+      <div class="contact-card"><span>🕐</span><div><strong>Office Hours</strong><p>Monday – Friday: 8:30 AM – 4:30 PM<br>Saturday: 9:00 AM – 12:30 PM</p></div></div>
+      <div class="contact-card"><span>🚌</span><div><strong>Bus Routes</strong><p>Virudhunagar Town · Sivakasi Road · Aruppukkottai Road · Rajapalayam Road · Watrap · Srivilliputhur Road</p></div></div>
+      <div class="map-placeholder"><div class="map-inner">📍 Venkateshwara Vidyalaya<br>Madurai Road, Virudhunagar</div></div>
+    </div>
+    <div class="contact-form-box">
+      <h3 style="font-family:var(--font-h);font-size:20px;color:var(--navy);margin-bottom:22px">Send a Message</h3>
+      <div class="contact-form">
+        <input type="text" class="form-input" placeholder="Your Name"/>
+        <input type="email" class="form-input" placeholder="Email Address"/>
+        <input type="tel" class="form-input" placeholder="Phone Number"/>
+        <select class="form-input"><option value="">Subject</option><option>Admissions Enquiry</option><option>Fee Payment</option><option>Bus Route Info</option><option>General Query</option><option>Feedback</option><option>Other</option></select>
+        <textarea class="form-input" rows="5" placeholder="Your message here..."></textarea>
+        <button class="btn-saffron" onclick="submitContact()">Send Message</button>
+      </div>
+      <p id="contactSuccess" class="form-success" style="display:none">✅ Message sent! We'll reply within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div class="logo-emblem">V</div><div class="logo-txt"><span class="logo-name" style="color:#fff;font-size:16px">Venkateshwara Vidyalaya</span><span class="logo-sub">Nursery & Primary School</span></div></div>
+      <p>Quality Education with Values & Cultural Pride.<br>Est. 1998 · Madurai Road, Virudhunagar – 626 001<br>Affiliated: Tamil Nadu State Board</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a onclick="scrollToSection('home')">Home</a>
+      <a onclick="scrollToSection('about')">About</a>
+      <a onclick="scrollToSection('facilities')">Facilities</a>
+      <a onclick="openGalleryPage()">Gallery</a>
+      <a onclick="scrollToSection('admissions')">Admissions</a>
+      <a onclick="openStaffPage()">Staff</a>
+      <a onclick="scrollToSection('contact')">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📍 Madurai Road, Virudhunagar – 626 001</p>
+      <p>📞 +91 4562 – 230 145</p>
+      <p>📱 +91 94432 85610</p>
+      <p>📧 info@venkateshwaravidyalaya.edu.in</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Venkateshwara Vidyalaya Nursery & Primary School, Virudhunagar. All Rights Reserved.</div>
+</footer>
+</div><!-- end site-view -->
+
+<!-- ====== GALLERY PAGE ====== -->
+<div id="gallery-page" style="display:none;padding-top:var(--nav-h)">
+
+  <!-- School Header in Gallery -->
+  <div class="school-page-header">
+    <div class="sph-logo"><div class="logo-emblem" style="width:54px;height:54px;font-size:22px">V</div></div>
+    <div class="sph-info">
+      <h2>Venkateshwara Vidyalaya</h2>
+      <p>Nursery & Primary School – Madurai Road, Virudhunagar – 626 001</p>
+      <p>📞 +91 4562-230145 &nbsp;|&nbsp; 📧 info@venkateshwaravidyalaya.edu.in &nbsp;|&nbsp; Tamil Nadu State Board</p>
+    </div>
+  </div>
+
+  <!-- YEAR SELECTION VIEW -->
+  <div id="gallery-year-view">
+    <div class="page-header">
+      <h2 class="page-title">Photo Gallery</h2>
+      <p class="page-sub">Memories & Milestones – Select a Year</p>
+    </div>
+    <div class="year-grid" id="yearGrid"></div>
+    <div style="text-align:center;padding:30px 0 60px">
+      <button class="btn-saffron" onclick="closePage('gallery-page')">← Back to Home</button>
+    </div>
+  </div>
+
+  <!-- MONTH SELECTION VIEW -->
+  <div id="gallery-month-view" style="display:none">
+    <div class="page-header">
+      <button class="back-page-btn" onclick="showYearView()">← Back to Years</button>
+      <h2 class="page-title" id="selected-year-title">2025</h2>
+      <p class="page-sub">Select a Month to View Photos</p>
+    </div>
+    <div class="month-grid" id="monthGrid"></div>
+    <div style="text-align:center;padding:30px 0 60px">
+      <button class="btn-saffron" onclick="showYearView()">← Back to Years</button>
+    </div>
+  </div>
+
+  <!-- EVENT LINK VIEW -->
+  <div id="gallery-event-view" style="display:none">
+    <div class="page-header">
+      <button class="back-page-btn" id="back-to-month-btn" onclick="showMonthView()">← Back to Months</button>
+      <h2 class="page-title" id="selected-month-title">January 2025</h2>
+      <p class="page-sub">Select an Event to View Photos</p>
+    </div>
+    <div class="event-links-grid" id="eventLinksGrid"></div>
+    <div style="text-align:center;padding:30px 0 60px">
+      <button class="btn-saffron" onclick="showMonthView()">← Back to Months</button>
+    </div>
+  </div>
+
+  <!-- PHOTO VIEWER -->
+  <div id="gallery-photo-view" style="display:none">
+    <div class="page-header">
+      <button class="back-page-btn" id="back-to-events-btn" onclick="showEventView()">← Back to Events</button>
+      <h2 class="page-title" id="selected-event-title">Pongal Celebration 2025</h2>
+      <p class="page-sub" id="selected-event-date"></p>
+    </div>
+    <div class="photo-mosaic" id="photoMosaic"></div>
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <div class="lb-inner">
+        <button class="lb-close" onclick="closeLightbox()">✕</button>
+        <button class="lb-prev" onclick="event.stopPropagation();lbNav(-1)">‹</button>
+        <div class="lb-photo" id="lb-photo"></div>
+        <button class="lb-next" onclick="event.stopPropagation();lbNav(1)">›</button>
+        <div class="lb-caption" id="lb-caption"></div>
+      </div>
+    </div>
+    <div style="text-align:center;padding:30px 0 60px">
+      <button class="btn-saffron" onclick="showEventView()">← Back to Events</button>
+    </div>
+  </div>
+
+  <!-- School Footer in Gallery -->
+  <div class="school-page-footer">
+    <p>Venkateshwara Vidyalaya – Madurai Road, Virudhunagar – 626 001 | © 2025 All Rights Reserved</p>
+  </div>
+</div>
+
+<!-- ====== STAFF PAGE ====== -->
+<div id="staff-page" style="display:none;padding-top:var(--nav-h)">
+  <!-- School Header -->
+  <div class="school-page-header">
+    <div class="sph-logo"><div class="logo-emblem" style="width:54px;height:54px;font-size:22px">V</div></div>
+    <div class="sph-info">
+      <h2>Venkateshwara Vidyalaya</h2>
+      <p>Nursery & Primary School – Madurai Road, Virudhunagar – 626 001</p>
+      <p>📞 +91 4562-230145 &nbsp;|&nbsp; 📧 info@venkateshwaravidyalaya.edu.in &nbsp;|&nbsp; Tamil Nadu State Board</p>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h2 class="page-title">Our Staff</h2>
+    <p class="page-sub">Dedicated Educators Shaping Little Minds</p>
+  </div>
+  <div class="staff-grid" style="max-width:1100px;margin:0 auto;padding:0 40px 80px">
+    <div class="staff-card principal"><div class="staff-avatar">👩‍💼</div><h3>Mrs. V. Meenakshi</h3><span class="staff-role">Headmistress</span><p>B.Ed, MA Tamil | 28 years experience. Recipient of State Best Teacher Award 2019. Leads the school with warmth and vision.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👩‍🏫</div><h3>Mrs. S. Kalaivani</h3><span class="staff-role">Senior Teacher – Std V</span><p>B.Ed, BA | 18 years. Specialises in Tamil language and moral education. Class teacher for Std V-A.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👨‍🏫</div><h3>Mr. R. Selvakumar</h3><span class="staff-role">Senior Teacher – Std IV</span><p>B.Ed, BSc Maths | 14 years. Expert in teaching Mathematics and Environmental Science for primary classes.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👩‍🎨</div><h3>Mrs. T. Bharathi</h3><span class="staff-role">Drawing & Cultural</span><p>B.F.A | 10 years. Leads annual day cultural programs, drawing classes and inter-school competitions.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👩‍🍼</div><h3>Ms. P. Suganya</h3><span class="staff-role">UKG Class Teacher</span><p>D.T.Ed | 8 years. Specialises in early childhood education, play-based learning and phonics teaching.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👩‍🏫</div><h3>Mrs. L. Revathi</h3><span class="staff-role">LKG / Nursery Head</span><p>D.T.Ed, Montessori Certified | 12 years. Expert in montessori methods and toddler development activities.</p></div>
+    <div class="staff-card"><div class="staff-avatar">🏃</div><h3>Mr. K. Murugesan</h3><span class="staff-role">Physical Education</span><p>B.P.Ed | 9 years. District-level Kabaddi coach. Leads sports day, yoga, and physical fitness programs.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👩‍⚕️</div><h3>Mrs. N. Vasanthi</h3><span class="staff-role">School Nurse</span><p>GNM | 6 years. Manages health records, mid-day meal hygiene, and student wellness check-ups.</p></div>
+    <div class="staff-card"><div class="staff-avatar">👨‍💻</div><h3>Mr. A. Dinesh</h3><span class="staff-role">Computer Teacher</span><p>MCA | 5 years. Teaches basic computer skills, typing and digital literacy for Std III–V students.</p></div>
+  </div>
+
+  <!-- School Footer -->
+  <div class="school-page-footer">
+    <p>Venkateshwara Vidyalaya – Madurai Road, Virudhunagar – 626 001 | © 2025 All Rights Reserved</p>
+  </div>
+  <div style="text-align:center;padding-bottom:60px">
+    <button class="btn-saffron" onclick="closePage('staff-page')">← Back to Home</button>
+  </div>
+</div>
+
+<!-- ====== ERP VIEW ====== -->
+<div id="erp-view">
+  <div id="erp-topbar">
+    <div style="display:flex;align-items:center;gap:10px">
+      <button id="erp-hamburger" onclick="toggleErpSidebar()">☰</button>
+      <div class="erp-page-title" id="erp-topbar-title">Dashboard</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="role-badge" id="role-badge-display">👤 Admin</div>
+      <button class="back-btn" onclick="logoutERP()">← Exit ERP</button>
+    </div>
+  </div>
+
+  <div id="erp-body">
+    <!-- ERP LOGIN -->
+    <div id="erp-login">
+      <div class="login-box">
+        <div class="login-logo">
+          <div class="circle">V</div>
+          <h1>Venkateshwara Vidyalaya</h1>
+          <p>School ERP Management System · Virudhunagar</p>
+        </div>
+        <div class="role-tabs">
+          <div class="role-tab active" onclick="setErpRole(this,'admin')">🛡️ Admin</div>
+          <div class="role-tab" onclick="setErpRole(this,'teacher')">📚 Teacher</div>
+          <div class="role-tab" onclick="setErpRole(this,'student')">🎓 Student</div>
+          <div class="role-tab" onclick="setErpRole(this,'parent')">👪 Parent</div>
+        </div>
+        <input class="login-input" type="text" placeholder="Username" id="l-user"/>
+        <input class="login-input" type="password" placeholder="Password" id="l-pass"/>
+        <button class="login-btn" onclick="doErpLogin()">Login →</button>
+        <div class="login-hint">
+          Demo: Admin: admin / admin123 | Teacher: teacher / teach123<br>Student: student / stu123 | Parent: parent / par123
+        </div>
+      </div>
+    </div>
+
+    <!-- ERP SIDEBAR -->
+    <nav id="erp-sidebar">
+      <div class="school-brand-erp">
+        <div class="school-logo-erp">V</div>
+        <h2>Venkateshwara Vidyalaya</h2>
+        <p>ERP · Virudhunagar</p>
+      </div>
+      <div id="sidebar-nav-items"></div>
+    </nav>
+    <div id="erp-sidebar-overlay" onclick="closeErpSidebar()"></div>
+
+    <!-- ERP MAIN -->
+    <div id="erp-main">
+
+      <!-- DASHBOARD -->
+      <div class="erp-page" id="erp-page-dashboard">
+        <div class="stat-grid-erp" id="dashboard-stats"></div>
+        <div class="two-col-erp">
+          <div class="form-card-erp">
+            <h4>📌 Notice Board</h4>
+            <ul class="notice-list">
+              <li><span class="notice-dot" style="background:#e74c3c"></span><div><div class="notice-title">Half-Yearly Exam Schedule Released</div><div class="notice-date">May 15, 2025</div></div></li>
+              <li><span class="notice-dot" style="background:var(--gold)"></span><div><div class="notice-title">Annual Day Celebration – June 5, 2025</div><div class="notice-date">May 12, 2025</div></div></li>
+              <li><span class="notice-dot" style="background:var(--saffron)"></span><div><div class="notice-title">Sports Day Registration Open</div><div class="notice-date">May 10, 2025</div></div></li>
+              <li><span class="notice-dot" style="background:var(--green-light)"></span><div><div class="notice-title">Summer Vacation from May 22, 2025</div><div class="notice-date">May 8, 2025</div></div></li>
+            </ul>
+          </div>
+          <div class="form-card-erp">
+            <h4>🎉 Upcoming Events</h4>
+            <div class="event-cards-erp">
+              <div class="event-card-erp"><div class="event-hdr-erp" style="background:var(--royal)"></div><div class="event-body-erp"><div class="ev-title">Half-Yearly Exams</div><div class="ev-date">📅 May 22–30</div><div class="ev-desc">Std I–V examinations</div></div></div>
+              <div class="event-card-erp"><div class="event-hdr-erp" style="background:var(--saffron)"></div><div class="event-body-erp"><div class="ev-title">Annual Day</div><div class="ev-date">📅 June 5, 2025</div><div class="ev-desc">Cultural & Prize Distribution</div></div></div>
+              <div class="event-card-erp"><div class="event-hdr-erp" style="background:var(--green-light)"></div><div class="event-body-erp"><div class="ev-title">Sports Day</div><div class="ev-date">📅 June 10, 2025</div><div class="ev-desc">Inter-house competition</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDENTS -->
+      <div class="erp-page" id="erp-page-students">
+        <div class="section-hdr-erp"><h3>Student Management</h3><button class="ebtn ebtn-primary" onclick="erpToggleForm('add-student-form')">+ Add Student</button></div>
+        <div id="add-student-form" style="display:none" class="form-card-erp">
+          <h4>Add New Student</h4>
+          <div class="form-grid-erp">
+            <div class="form-group-erp"><label>First Name</label><input placeholder="First name"></div>
+            <div class="form-group-erp"><label>Last Name</label><input placeholder="Last name"></div>
+            <div class="form-group-erp"><label>Admission No.</label><input placeholder="VVS-2025-XXX"></div>
+            <div class="form-group-erp"><label>Class</label><select><option>Nursery</option><option>LKG</option><option>UKG</option><option>Std I</option><option>Std II</option><option>Std III</option><option>Std IV</option><option>Std V</option></select></div>
+            <div class="form-group-erp"><label>Section</label><select><option>A</option><option>B</option></select></div>
+            <div class="form-group-erp"><label>Date of Birth</label><input type="date"></div>
+            <div class="form-group-erp"><label>Gender</label><select><option>Male</option><option>Female</option></select></div>
+            <div class="form-group-erp"><label>Father's Name</label><input placeholder="Father name"></div>
+            <div class="form-group-erp"><label>Mobile</label><input placeholder="Parent mobile"></div>
+            <div class="form-group-erp"><label>Medium</label><select><option>Tamil</option><option>English</option></select></div>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <button class="ebtn ebtn-saffron" onclick="showToast('Student added successfully!')">Save</button>
+            <button class="ebtn" style="background:#eee" onclick="erpToggleForm('add-student-form')">Cancel</button>
+          </div>
+        </div>
+        <div class="table-wrap-erp">
+          <table>
+            <thead><tr><th>Adm. No</th><th>Student Name</th><th>Class</th><th>Medium</th><th>Father's Name</th><th>Mobile</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>VVS-001</td><td>Arjun R.</td><td>Std V-A</td><td>Tamil</td><td>Ravi Kumar</td><td>6380623206</td><td><span class="badge-pill pill-green">Active</span></td><td><button class="ebtn ebtn-sm ebtn-primary">Edit</button></td></tr>
+              <tr><td>VVS-002</td><td>Priya S.</td><td>Std IV-A</td><td>English</td><td>Suresh S.</td><td>6380623206</td><td><span class="badge-pill pill-green">Active</span></td><td><button class="ebtn ebtn-sm ebtn-primary">Edit</button></td></tr>
+              <tr><td>VVS-003</td><td>Vikram M.</td><td>Std V-B</td><td>Tamil</td><td>Mohan M.</td><td>6380623206</td><td><span class="badge-pill pill-green">Active</span></td><td><button class="ebtn ebtn-sm ebtn-primary">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TEACHERS -->
+      <div class="erp-page" id="erp-page-teachers">
+        <div class="section-hdr-erp"><h3>Teacher Management</h3><button class="ebtn ebtn-primary" onclick="erpToggleForm('add-teacher-form')">+ Add Teacher</button></div>
+        <div id="add-teacher-form" style="display:none" class="form-card-erp">
+          <h4>Add New Teacher</h4>
+          <div class="form-grid-erp">
+            <div class="form-group-erp"><label>Teacher Name</label><input placeholder="Full name"></div>
+            <div class="form-group-erp"><label>Teacher ID</label><input placeholder="VVT-2025-XXX"></div>
+            <div class="form-group-erp"><label>Class In-Charge</label><select><option>Nursery</option><option>LKG</option><option>UKG</option><option>Std I</option><option>Std II</option><option>Std III</option><option>Std IV</option><option>Std V</option></select></div>
+            <div class="form-group-erp"><label>Subject</label><select><option>Tamil</option><option>English</option><option>Mathematics</option><option>Environmental Science</option><option>Drawing</option><option>Physical Education</option></select></div>
+            <div class="form-group-erp"><label>Qualification</label><input placeholder="D.T.Ed / B.Ed..."></div>
+            <div class="form-group-erp"><label>Mobile</label><input placeholder="Mobile number"></div>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <button class="ebtn ebtn-saffron" onclick="showToast('Teacher added successfully!')">Save</button>
+            <button class="ebtn" style="background:#eee" onclick="erpToggleForm('add-teacher-form')">Cancel</button>
+          </div>
+        </div>
+        <div class="table-wrap-erp">
+          <table>
+            <thead><tr><th>Teacher ID</th><th>Name</th><th>Class</th><th>Subject</th><th>Qualification</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>VVT-001</td><td>Mrs. S. Kalaivani</td><td>Std V-A</td><td>Tamil</td><td>BA, B.Ed</td><td><span class="badge-pill pill-green">Active</span></td></tr>
+              <tr><td>VVT-002</td><td>Mr. R. Selvakumar</td><td>Std IV-A</td><td>Maths</td><td>BSc, B.Ed</td><td><span class="badge-pill pill-green">Active</span></td></tr>
+              <tr><td>VVT-003</td><td>Mrs. T. Bharathi</td><td>All</td><td>Drawing</td><td>BFA</td><td><span class="badge-pill pill-green">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE -->
+      <div class="erp-page" id="erp-page-attendance">
+        <div class="section-hdr-erp"><h3>Attendance Management</h3></div>
+        <div class="stat-grid-erp">
+          <div class="stat-card-erp" style="border-top:4px solid var(--green-light)"><div class="sc-icon">✅</div><div class="sc-label">Present Today</div><div class="sc-value" style="color:var(--green-light)" id="att-stat-present">0</div><div class="sc-change" id="att-stat-pct">0%</div></div>
+          <div class="stat-card-erp" style="border-top:4px solid #e74c3c"><div class="sc-icon">❌</div><div class="sc-label">Absent Today</div><div class="sc-value" style="color:#e74c3c" id="att-stat-absent">0</div></div>
+          <div class="stat-card-erp" style="border-top:4px solid #2980b9"><div class="sc-icon">🏫</div><div class="sc-label">On Duty (OD)</div><div class="sc-value" style="color:#2980b9" id="att-stat-od">0</div></div>
+          <div class="stat-card-erp" style="border-top:4px solid var(--gold)"><div class="sc-icon">👨‍🎓</div><div class="sc-label">Total Students</div><div class="sc-value" style="color:var(--gold)" id="att-stat-total">0</div></div>
+        </div>
+        <div class="two-col-erp">
+          <div class="form-card-erp">
+            <h4>Mark Attendance</h4>
+            <div class="form-grid-erp" style="grid-template-columns:1fr 1fr;margin-bottom:14px">
+              <div class="form-group-erp"><label>Class</label>
+                <select id="att-class-select" onchange="buildAttendanceTable()">
+                  <option value="std5a">Std V-A</option><option value="std4a">Std IV-A</option><option value="std3a">Std III-A</option>
+                </select>
+              </div>
+              <div class="form-group-erp"><label>Date</label><input type="date" id="att-date"></div>
+            </div>
+            <div class="table-wrap-erp">
+              <table><thead><tr><th style="width:55px">Roll</th><th>Student Name</th><th>Status</th></tr></thead><tbody id="att-student-tbody"></tbody></table>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="ebtn ebtn-saffron" onclick="saveAttendance()">💾 Save Attendance</button>
+              <button class="ebtn ebtn-whatsapp" onclick="sendAllAbsentWhatsApp()">📲 WhatsApp Absent</button>
+            </div>
+          </div>
+          <div class="form-card-erp">
+            <h4>Absent Students – Today</h4>
+            <ul id="att-absent-panel" style="padding:0;list-style:none"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABSENT HISTORY -->
+      <div class="erp-page" id="erp-page-absenthistory">
+        <div class="section-hdr-erp">
+          <h3>Absent Students – History & Records</h3>
+          <button class="ebtn ebtn-pdf" onclick="downloadAbsentPDF()">📄 Download PDF</button>
+        </div>
+        <div class="form-card-erp">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+            <div class="form-group-erp" style="min-width:140px"><label>Filter by Date</label><input type="date" id="filter-date" onchange="filterAbsentHistory()"></div>
+            <div class="form-group-erp" style="min-width:140px"><label>Filter by Class</label>
+              <select id="filter-class" onchange="filterAbsentHistory()">
+                <option value="all">All Classes</option><option value="Std V-A">Std V-A</option><option value="Std IV-A">Std IV-A</option><option value="Std III-A">Std III-A</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrap-erp">
+            <table id="absent-history-table">
+              <thead><tr><th>Date</th><th>Class</th><th>Roll No</th><th>Student Name</th><th>Parent Name</th><th>Mobile</th><th>Status</th><th>Notified</th></tr></thead>
+              <tbody id="absent-history-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEES -->
+      <div class="erp-page" id="erp-page-fees">
+        <div class="section-hdr-erp"><h3>Fees Management</h3><button class="ebtn ebtn-primary" onclick="erpToggleForm('add-fee-form')">+ Collect Fee</button></div>
+        <div class="stat-grid-erp">
+          <div class="stat-card-erp"><div class="sc-label">Tuition Collected</div><div class="sc-value" style="color:var(--royal)">₹1.8L</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Bus Fee Collected</div><div class="sc-value" style="color:var(--gold)">₹45K</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Pending Total</div><div class="sc-value" style="color:#e74c3c">₹68K</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Concessions</div><div class="sc-value" style="color:var(--green-light)">₹42K</div></div>
+        </div>
+        <div id="add-fee-form" style="display:none" class="form-card-erp">
+          <h4>Collect Fee Payment</h4>
+          <div class="form-grid-erp">
+            <div class="form-group-erp"><label>Admission No.</label><input placeholder="VVS-XXX"></div>
+            <div class="form-group-erp"><label>Fee Type</label><select><option>Tuition</option><option>Bus Fee</option><option>Exam Fee</option></select></div>
+            <div class="form-group-erp"><label>Amount (₹)</label><input type="number" placeholder="0.00"></div>
+            <div class="form-group-erp"><label>Payment Mode</label><select><option>Cash</option><option>Online / UPI</option><option>Cheque</option></select></div>
+          </div>
+          <button class="ebtn ebtn-saffron" style="margin-top:12px" onclick="showErpReceipt()">Collect & Print Receipt</button>
+        </div>
+        <div id="erp-receipt-area" style="display:none;margin-bottom:18px">
+          <div class="receipt">
+            <div class="receipt-hdr"><div style="font-family:var(--font-h);font-size:18px;font-weight:900;color:var(--navy)">Venkateshwara Vidyalaya</div><div style="font-size:11px;color:#6b7a99">Fee Receipt – Virudhunagar</div></div>
+            <div class="receipt-row"><span>Receipt No</span><span>#RCP-20250515-001</span></div>
+            <div class="receipt-row"><span>Student Name</span><span>Arjun R.</span></div>
+            <div class="receipt-row"><span>Fee Type</span><span>Tuition – Term 2</span></div>
+            <div class="receipt-row total"><span>Total Amount</span><span>₹7,000</span></div>
+            <div style="text-align:center;margin-top:12px"><button class="ebtn ebtn-primary" onclick="window.print()">🖨️ Print</button></div>
+          </div>
+        </div>
+        <div class="table-wrap-erp">
+          <table>
+            <thead><tr><th>Receipt No</th><th>Student</th><th>Class</th><th>Fee Type</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>RCP-001</td><td>Arjun R.</td><td>Std V-A</td><td>Tuition</td><td>₹7,000</td><td>May 15</td><td><span class="badge-pill pill-green">Paid</span></td></tr>
+              <tr><td>RCP-002</td><td>Priya S.</td><td>Std IV-A</td><td>Tuition + Bus</td><td>₹9,500</td><td>May 14</td><td><span class="badge-pill pill-green">Paid</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EXAMS -->
+      <div class="erp-page" id="erp-page-exams">
+        <div class="section-hdr-erp"><h3>Exam & Marks Management</h3></div>
+        <div class="two-col-erp">
+          <div class="form-card-erp">
+            <h4>Enter Marks</h4>
+            <div class="form-grid-erp" style="margin-bottom:14px">
+              <div class="form-group-erp"><label>Class</label><select><option>Std V-A</option><option>Std IV-A</option></select></div>
+              <div class="form-group-erp"><label>Subject</label><select><option>Tamil</option><option>English</option><option>Mathematics</option><option>Env. Science</option></select></div>
+              <div class="form-group-erp"><label>Exam Type</label><select><option>Unit Test</option><option>Half-Yearly</option><option>Annual</option></select></div>
+            </div>
+            <div class="table-wrap-erp">
+              <table><thead><tr><th>Student</th><th>Marks</th><th>Grade</th></tr></thead><tbody>
+                <tr><td>Arjun R.</td><td><input style="width:65px;padding:4px 8px;border:1px solid #ddd;border-radius:4px;text-align:center" value="88"></td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                <tr><td>Priya S.</td><td><input style="width:65px;padding:4px 8px;border:1px solid #ddd;border-radius:4px;text-align:center" value="92"></td><td><span class="badge-pill pill-green">A+</span></td></tr>
+              </tbody></table>
+            </div>
+            <button class="ebtn ebtn-saffron" style="margin-top:12px" onclick="showToast('Marks saved!')">Save Marks</button>
+          </div>
+          <div class="form-card-erp">
+            <h4>Rank List – Std V-A</h4>
+            <div class="table-wrap-erp">
+              <table><thead><tr><th>Rank</th><th>Student</th><th>Total</th><th>%</th><th>Grade</th></tr></thead><tbody>
+                <tr><td>🥇 1</td><td>Priya S.</td><td>368/400</td><td>92%</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                <tr><td>🥈 2</td><td>Arjun R.</td><td>352/400</td><td>88%</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMETABLE -->
+      <div class="erp-page" id="erp-page-timetable">
+        <div class="section-hdr-erp"><h3>Class Timetable</h3></div>
+        <div class="form-card-erp">
+          <h4>Std V-A – Weekly Timetable</h4>
+          <div class="timetable-wrap">
+            <table class="timetable">
+              <thead><tr><th>Period</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead>
+              <tbody>
+                <tr><td><strong>08:30–09:15</strong></td><td><div class="tt-period">Tamil</div></td><td><div class="tt-period">English</div></td><td><div class="tt-period">Maths</div></td><td><div class="tt-period">Tamil</div></td><td><div class="tt-period">Env. Sci</div></td><td><div class="tt-period">Drawing</div></td></tr>
+                <tr><td><strong>09:15–10:00</strong></td><td><div class="tt-period">Maths</div></td><td><div class="tt-period">Tamil</div></td><td><div class="tt-period">English</div></td><td><div class="tt-period">Maths</div></td><td><div class="tt-period">Tamil</div></td><td><div class="tt-period">PT / Yoga</div></td></tr>
+                <tr><td><strong>10:00–10:15</strong></td><td colspan="6"><div class="tt-break">☕ Morning Break</div></td></tr>
+                <tr><td><strong>10:15–11:00</strong></td><td><div class="tt-period">English</div></td><td><div class="tt-period">Maths</div></td><td><div class="tt-period">Tamil</div></td><td><div class="tt-period">Env. Sci</div></td><td><div class="tt-period">English</div></td><td><div class="tt-period">Value Ed.</div></td></tr>
+                <tr><td><strong>12:00–12:45</strong></td><td colspan="6"><div class="tt-break">🍛 Lunch / Mid-Day Meal</div></td></tr>
+                <tr><td><strong>12:45–01:30</strong></td><td><div class="tt-period">Drawing</div></td><td><div class="tt-period">PT / Yoga</div></td><td><div class="tt-period">Value Ed.</div></td><td><div class="tt-period">Music</div></td><td><div class="tt-period">Revision</div></td><td style="color:#6b7a99">--</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENTS -->
+      <div class="erp-page" id="erp-page-events">
+        <div class="section-hdr-erp"><h3>Events & Notice Board</h3><button class="ebtn ebtn-primary" onclick="erpToggleForm('add-event')">+ Add Event</button></div>
+        <div id="add-event" style="display:none" class="form-card-erp">
+          <h4>Add Event / Notice</h4>
+          <div class="form-grid-erp">
+            <div class="form-group-erp"><label>Title</label><input placeholder="Event title"></div>
+            <div class="form-group-erp"><label>Type</label><select><option>School Event</option><option>Holiday</option><option>Exam Notice</option></select></div>
+            <div class="form-group-erp"><label>Date</label><input type="date"></div>
+          </div>
+          <button class="ebtn ebtn-saffron" style="margin-top:12px" onclick="showToast('Event added!')">Save Event</button>
+        </div>
+        <div class="event-cards-erp">
+          <div class="event-card-erp"><div class="event-hdr-erp" style="background:#e74c3c"></div><div class="event-body-erp"><div class="ev-title">📝 Half-Yearly Exams</div><div class="ev-date">May 22–30, 2025</div></div></div>
+          <div class="event-card-erp"><div class="event-hdr-erp" style="background:var(--saffron)"></div><div class="event-body-erp"><div class="ev-title">🎭 Annual Day</div><div class="ev-date">June 5, 2025</div></div></div>
+          <div class="event-card-erp"><div class="event-hdr-erp" style="background:var(--green-light)"></div><div class="event-body-erp"><div class="ev-title">🏃 Sports Day</div><div class="ev-date">June 10, 2025</div></div></div>
+        </div>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="erp-page" id="erp-page-transport">
+        <div class="section-hdr-erp"><h3>Transport Management</h3></div>
+        <div class="table-wrap-erp">
+          <table>
+            <thead><tr><th>Bus No</th><th>Driver</th><th>Route</th><th>Mobile</th><th>Students</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>TN-63-AB-1234</td><td>Murugesan</td><td>Route 1 – Virudhunagar Town</td><td>9876541001</td><td>38</td><td><span class="badge-pill pill-green">Active</span></td></tr>
+              <tr><td>TN-63-CD-5678</td><td>Selvam</td><td>Route 2 – Sivakasi Road</td><td>9876541002</td><td>42</td><td><span class="badge-pill pill-green">Active</span></td></tr>
+              <tr><td>TN-63-EF-9012</td><td>Rajan</td><td>Route 3 – Aruppukkottai Road</td><td>9876541003</td><td>35</td><td><span class="badge-pill pill-orange">Maintenance</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- COMMUNICATION -->
+      <div class="erp-page" id="erp-page-communication">
+        <div class="section-hdr-erp"><h3>Communication Module</h3></div>
+        <div class="two-col-erp">
+          <div class="form-card-erp">
+            <h4>📱 Send SMS / Notification</h4>
+            <div class="form-group-erp" style="margin-bottom:12px"><label>Send To</label><select><option>All Parents</option><option>Std V Parents</option><option>All Teachers</option></select></div>
+            <div class="form-group-erp" style="margin-bottom:12px"><label>Subject</label><input placeholder="Message subject"></div>
+            <div class="form-group-erp" style="margin-bottom:14px"><label>Message</label><textarea rows="5" placeholder="Type message..."></textarea></div>
+            <button class="ebtn ebtn-saffron" onclick="showToast('Message sent to all parents!')">📤 Send Now</button>
+          </div>
+          <div class="form-card-erp">
+            <h4>📋 Sent Messages Log</h4>
+            <ul class="notice-list">
+              <li><span class="notice-dot" style="background:var(--green-light)"></span><div><div class="notice-title">Exam schedule sent to all parents</div><div class="notice-date">May 14 | SMS | 850 sent</div></div></li>
+              <li><span class="notice-dot" style="background:var(--saffron)"></span><div><div class="notice-title">Absent students notified</div><div class="notice-date">May 15 | SMS | 45 sent</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCOUNTS -->
+      <div class="erp-page" id="erp-page-accounts">
+        <div class="section-hdr-erp"><h3>Accounts Management</h3></div>
+        <div class="stat-grid-erp">
+          <div class="stat-card-erp"><div class="sc-label">Total Income (May)</div><div class="sc-value" style="color:var(--green-light)">₹2.8L</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Total Expenses</div><div class="sc-value" style="color:#e74c3c">₹1.6L</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Net Balance</div><div class="sc-value" style="color:var(--royal)">₹1.2L</div></div>
+          <div class="stat-card-erp"><div class="sc-label">Salaries Paid</div><div class="sc-value" style="color:var(--gold)">₹1.1L</div></div>
+        </div>
+      </div>
+
+      <!-- ===== STUDENT PORTAL (ENHANCED) ===== -->
+      <div class="erp-page" id="erp-page-studentportal">
+        <div class="student-profile-header">
+          <div class="profile-avatar-wrap">
+            <div class="profile-big-avatar">🎓</div>
+            <div class="profile-star-badge" id="student-star-badge"></div>
+          </div>
+          <div class="profile-info">
+            <h2 id="student-name-display">Arjun R.</h2>
+            <p id="student-class-display">Std V-A &nbsp;|&nbsp; Admission No: VVS-001 &nbsp;|&nbsp; Tamil Medium</p>
+            <div class="profile-stars" id="profile-stars-display"></div>
+            <div class="profile-star-label" id="profile-star-label"></div>
+          </div>
+          <div class="profile-quick-stats">
+            <div class="pqs-item"><div class="pqs-val" style="color:var(--green-light)">92%</div><div class="pqs-label">Attendance</div></div>
+            <div class="pqs-item"><div class="pqs-val" style="color:var(--gold)">2nd</div><div class="pqs-label">Class Rank</div></div>
+            <div class="pqs-item"><div class="pqs-val" style="color:var(--saffron)">7</div><div class="pqs-label">Prizes Won</div></div>
+            <div class="pqs-item"><div class="pqs-val" style="color:var(--royal)">5</div><div class="pqs-label">Events</div></div>
+          </div>
+        </div>
+
+        <!-- Student Tabs -->
+        <div class="student-tabs">
+          <button class="stab active" onclick="showStudentTab('overview',this)">📊 Overview</button>
+          <button class="stab" onclick="showStudentTab('activities',this)">🎯 Activities</button>
+          <button class="stab" onclick="showStudentTab('games',this)">🏆 Games & Sports</button>
+          <button class="stab" onclick="showStudentTab('prizes',this)">🥇 Prizes</button>
+          <button class="stab" onclick="showStudentTab('marks',this)">📝 Marks</button>
+          <button class="stab" onclick="showStudentTab('homework',this)">📚 Homework</button>
+        </div>
+
+        <!-- Overview Tab -->
+        <div class="stab-content active" id="stab-overview">
+          <div class="two-col-erp">
+            <div class="student-view-card">
+              <h4>📊 My Attendance</h4>
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+                <div class="progress" style="flex:1"><div class="progress-fill" style="width:92%;background:var(--green-light)"></div></div>
+                <strong style="color:var(--green-light)">92%</strong>
+              </div>
+              <div class="table-wrap-erp">
+                <table><thead><tr><th>Month</th><th>Present</th><th>Absent</th><th>%</th></tr></thead><tbody>
+                  <tr><td>January</td><td>22</td><td>2</td><td>91.6%</td></tr>
+                  <tr><td>February</td><td>20</td><td>0</td><td>100%</td></tr>
+                  <tr><td>March</td><td>24</td><td>1</td><td>96%</td></tr>
+                  <tr><td>April</td><td>20</td><td>1</td><td>95.2%</td></tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="student-view-card">
+              <h4>⭐ My Achievement Stars</h4>
+              <div class="star-breakdown">
+                <div class="star-row"><span class="star-category">📚 Academic</span><div class="star-mini-bar"><div class="star-mini-fill" style="width:90%"></div></div><span>★★★★★</span></div>
+                <div class="star-row"><span class="star-category">🏃 Sports</span><div class="star-mini-bar"><div class="star-mini-fill" style="width:80%"></div></div><span>★★★★☆</span></div>
+                <div class="star-row"><span class="star-category">🎨 Arts</span><div class="star-mini-bar"><div class="star-mini-fill" style="width:60%"></div></div><span>★★★☆☆</span></div>
+                <div class="star-row"><span class="star-category">🤝 Discipline</span><div class="star-mini-bar"><div class="star-mini-fill" style="width:100%"></div></div><span>★★★★★</span></div>
+                <div class="star-row"><span class="star-category">🎭 Cultural</span><div class="star-mini-bar"><div class="star-mini-fill" style="width:70%"></div></div><span>★★★★☆</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activities Tab -->
+        <div class="stab-content" id="stab-activities">
+          <div class="activities-grid">
+            <div class="activity-card act-cultural">
+              <div class="act-icon">🎭</div>
+              <div class="act-info">
+                <h4>Annual Day Performance</h4>
+                <p>Participated in Bharatanatyam dance performance – 2024 Annual Day</p>
+                <div class="act-meta"><span class="act-tag">Cultural</span><span class="act-date">June 2024</span></div>
+              </div>
+            </div>
+            <div class="activity-card act-academic">
+              <div class="act-icon">📚</div>
+              <div class="act-info">
+                <h4>Tamil Essay Competition</h4>
+                <p>Represented school in District-level Tamil Essay competition – won 2nd place</p>
+                <div class="act-meta"><span class="act-tag">Academic</span><span class="act-date">Feb 2024</span></div>
+              </div>
+            </div>
+            <div class="activity-card act-social">
+              <div class="act-icon">🌱</div>
+              <div class="act-info">
+                <h4>Green School Campaign</h4>
+                <p>Active participant in tree-planting drive – planted 5 saplings in school campus</p>
+                <div class="act-meta"><span class="act-tag">Social</span><span class="act-date">Aug 2024</span></div>
+              </div>
+            </div>
+            <div class="activity-card act-cultural">
+              <div class="act-icon">🎵</div>
+              <div class="act-info">
+                <h4>School Choir</h4>
+                <p>Member of school choir for Independence Day & Republic Day performances</p>
+                <div class="act-meta"><span class="act-tag">Cultural</span><span class="act-date">Jan & Aug 2024</span></div>
+              </div>
+            </div>
+            <div class="activity-card act-academic">
+              <div class="act-icon">🔬</div>
+              <div class="act-info">
+                <h4>Science Exhibition</h4>
+                <p>Presented working model on Solar Energy – school science expo</p>
+                <div class="act-meta"><span class="act-tag">Academic</span><span class="act-date">Nov 2024</span></div>
+              </div>
+            </div>
+            <div class="activity-card act-social">
+              <div class="act-icon">🤝</div>
+              <div class="act-info">
+                <h4>Class Monitor</h4>
+                <p>Elected Class Monitor for 2024-25 – responsible for classroom discipline and duties</p>
+                <div class="act-meta"><span class="act-tag">Leadership</span><span class="act-date">2024-25</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Games Tab -->
+        <div class="stab-content" id="stab-games">
+          <div class="games-grid">
+            <div class="game-card">
+              <div class="game-icon">🏏</div>
+              <h4>Cricket</h4>
+              <p>School cricket team – Opening Batsman</p>
+              <div class="game-stats-row">
+                <div class="gstat"><div class="gstat-val">12</div><div class="gstat-lbl">Matches</div></div>
+                <div class="gstat"><div class="gstat-val">8</div><div class="gstat-lbl">Wins</div></div>
+                <div class="gstat"><div class="gstat-val">245</div><div class="gstat-lbl">Runs</div></div>
+              </div>
+              <span class="game-level-badge level-district">District Level</span>
+            </div>
+            <div class="game-card">
+              <div class="game-icon">🏃</div>
+              <h4>100m Sprint</h4>
+              <p>Athletics – Track & Field events</p>
+              <div class="game-stats-row">
+                <div class="gstat"><div class="gstat-val">6</div><div class="gstat-lbl">Races</div></div>
+                <div class="gstat"><div class="gstat-val">4</div><div class="gstat-lbl">Podium</div></div>
+                <div class="gstat"><div class="gstat-val">14.2s</div><div class="gstat-lbl">Best Time</div></div>
+              </div>
+              <span class="game-level-badge level-school">School Level</span>
+            </div>
+            <div class="game-card">
+              <div class="game-icon">🤼</div>
+              <h4>Kabaddi</h4>
+              <p>Inter-house Kabaddi team – Blue House</p>
+              <div class="game-stats-row">
+                <div class="gstat"><div class="gstat-val">8</div><div class="gstat-lbl">Matches</div></div>
+                <div class="gstat"><div class="gstat-val">6</div><div class="gstat-lbl">Wins</div></div>
+                <div class="gstat"><div class="gstat-val">🥈</div><div class="gstat-lbl">Best</div></div>
+              </div>
+              <span class="game-level-badge level-school">School Level</span>
+            </div>
+            <div class="game-card">
+              <div class="game-icon">🎯</div>
+              <h4>Carrom</h4>
+              <p>Indoor games – Carrom champion 2024</p>
+              <div class="game-stats-row">
+                <div class="gstat"><div class="gstat-val">10</div><div class="gstat-lbl">Matches</div></div>
+                <div class="gstat"><div class="gstat-val">9</div><div class="gstat-lbl">Wins</div></div>
+                <div class="gstat"><div class="gstat-val">🥇</div><div class="gstat-lbl">Best</div></div>
+              </div>
+              <span class="game-level-badge level-school">School Champion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prizes Tab -->
+        <div class="stab-content" id="stab-prizes">
+          <div class="prizes-timeline">
+            <div class="prize-item prize-gold">
+              <div class="prize-medal">🥇</div>
+              <div class="prize-info">
+                <h4>1st Prize – Tamil Essay Writing</h4>
+                <p>District Level Tamil Essay Competition – "Kamarajar's Legacy"</p>
+                <div class="prize-meta"><span>Feb 2024</span><span class="prize-level">District</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-gold">
+              <div class="prize-medal">🏆</div>
+              <div class="prize-info">
+                <h4>Best Student Award</h4>
+                <p>Annual Day 2024 – Best All-Round Student of Std V-A</p>
+                <div class="prize-meta"><span>June 2024</span><span class="prize-level">School</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-silver">
+              <div class="prize-medal">🥈</div>
+              <div class="prize-info">
+                <h4>2nd Prize – Cricket Tournament</h4>
+                <p>Inter-school Cricket tournament – Runner Up team</p>
+                <div class="prize-meta"><span>Mar 2024</span><span class="prize-level">Inter-School</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-gold">
+              <div class="prize-medal">🥇</div>
+              <div class="prize-info">
+                <h4>1st Place – Carrom Championship</h4>
+                <p>School Sports Day Indoor Games – Carrom Singles</p>
+                <div class="prize-meta"><span>Jan 2024</span><span class="prize-level">School</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-bronze">
+              <div class="prize-medal">🥉</div>
+              <div class="prize-info">
+                <h4>3rd Prize – Drawing Competition</h4>
+                <p>Children's Day Drawing Competition – Theme: "My School"</p>
+                <div class="prize-meta"><span>Nov 2023</span><span class="prize-level">School</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-silver">
+              <div class="prize-medal">🥈</div>
+              <div class="prize-info">
+                <h4>2nd Prize – Science Model</h4>
+                <p>School Science Exhibition – Solar Energy Working Model</p>
+                <div class="prize-meta"><span>Nov 2024</span><span class="prize-level">School</span></div>
+              </div>
+            </div>
+            <div class="prize-item prize-special">
+              <div class="prize-medal">⭐</div>
+              <div class="prize-info">
+                <h4>Special Award – Best Class Monitor</h4>
+                <p>Recognized for outstanding leadership and discipline management</p>
+                <div class="prize-meta"><span>Mar 2025</span><span class="prize-level">School</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marks Tab -->
+        <div class="stab-content" id="stab-marks">
+          <div class="student-view-card">
+            <h4>📝 My Marks</h4>
+            <div class="table-wrap-erp">
+              <table><thead><tr><th>Subject</th><th>Unit Test</th><th>Half-Yearly</th><th>Grade</th></tr></thead><tbody>
+                <tr><td>Tamil</td><td>44/50</td><td>88/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                <tr><td>English</td><td>40/50</td><td>82/100</td><td><span class="badge-pill pill-green">A</span></td></tr>
+                <tr><td>Mathematics</td><td>46/50</td><td>92/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                <tr><td>Env. Science</td><td>43/50</td><td>87/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Homework Tab -->
+        <div class="stab-content" id="stab-homework">
+          <div class="student-view-card">
+            <h4>📚 Homework Due</h4>
+            <ul class="notice-list">
+              <li><span class="notice-dot" style="background:var(--saffron)"></span><div><div class="notice-title">Mathematics – Exercise 8.4 (pg 112)</div><div class="notice-date">Due: May 17</div></div></li>
+              <li><span class="notice-dot" style="background:#2980b9"></span><div><div class="notice-title">Tamil – Essay on Kamarajar</div><div class="notice-date">Due: May 18</div></div></li>
+              <li><span class="notice-dot" style="background:var(--green-light)"></span><div><div class="notice-title">Drawing – Nature sketch</div><div class="notice-date">Due: May 19</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PARENT PORTAL (ENHANCED) ===== -->
+      <div class="erp-page" id="erp-page-parentportal">
+        <div class="section-hdr-erp"><h3>Parent Portal</h3></div>
+
+        <!-- Parent Bio Card -->
+        <div class="parent-bio-card">
+          <div class="parent-bio-left">
+            <div class="parent-avatar">👨‍👩‍👦</div>
+            <div class="parent-bio-info">
+              <h3>Ravi Kumar & Lakshmi Ravi</h3>
+              <p class="parent-sub">Parents of Arjun R. | Std V-A</p>
+              <div class="parent-bio-details">
+                <div class="pbd-item"><span>📞</span><span>+91 6380623206</span></div>
+                <div class="pbd-item"><span>📧</span><span>ravikumar@gmail.com</span></div>
+                <div class="pbd-item"><span>📍</span><span>Virudhunagar Town</span></div>
+                <div class="pbd-item"><span>💼</span><span>Father: Business Owner | Mother: Teacher</span></div>
+                <div class="pbd-item"><span>🚌</span><span>Bus Route 1 – Virudhunagar Town</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="parent-bio-right">
+            <div class="child-mini-profile">
+              <div class="cmp-avatar">🎓</div>
+              <h4>Arjun R.</h4>
+              <p>Std V-A | Admission: VVS-001</p>
+              <div class="child-stars-display" id="child-stars-parent"></div>
+              <div class="cmp-stat-row">
+                <div class="cmp-stat"><div class="cmp-val" style="color:var(--green-light)">92%</div><div class="cmp-lbl">Attendance</div></div>
+                <div class="cmp-stat"><div class="cmp-val" style="color:var(--gold)">2nd</div><div class="cmp-lbl">Rank</div></div>
+                <div class="cmp-stat"><div class="cmp-val" style="color:var(--saffron)">7</div><div class="cmp-lbl">Prizes</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parent Portal Tabs -->
+        <div class="student-tabs" style="margin-top:20px">
+          <button class="stab active" onclick="showParentTab('child-overview',this)">👦 Child Overview</button>
+          <button class="stab" onclick="showParentTab('child-activities',this)">🎯 Activities</button>
+          <button class="stab" onclick="showParentTab('child-prizes',this)">🏆 Achievements</button>
+          <button class="stab" onclick="showParentTab('child-fees',this)">💰 Fees</button>
+          <button class="stab" onclick="showParentTab('child-notices',this)">📢 Notices</button>
+        </div>
+
+        <div class="stab-content active" id="stab-child-overview">
+          <div class="two-col-erp">
+            <div class="form-card-erp">
+              <h4>Arjun R. – Marks Overview</h4>
+              <div class="table-wrap-erp">
+                <table><thead><tr><th>Subject</th><th>Unit Test</th><th>Half-Yearly</th><th>Grade</th></tr></thead><tbody>
+                  <tr><td>Tamil</td><td>44/50</td><td>88/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                  <tr><td>English</td><td>40/50</td><td>82/100</td><td><span class="badge-pill pill-green">A</span></td></tr>
+                  <tr><td>Mathematics</td><td>46/50</td><td>92/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                  <tr><td>Env. Science</td><td>43/50</td><td>87/100</td><td><span class="badge-pill pill-green">A+</span></td></tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="form-card-erp">
+              <h4>Attendance & Behaviour</h4>
+              <div style="margin-bottom:14px">
+                <div style="font-size:12px;color:#6b7a99;margin-bottom:6px;font-weight:700">ATTENDANCE THIS TERM</div>
+                <div style="display:flex;align-items:center;gap:10px"><div class="progress" style="flex:1"><div class="progress-fill" style="width:92%;background:var(--green-light)"></div></div><strong>92%</strong></div>
+              </div>
+              <div class="star-breakdown">
+                <div class="star-row"><span class="star-category">📚 Academic</span><span>★★★★★</span></div>
+                <div class="star-row"><span class="star-category">🤝 Discipline</span><span>★★★★★</span></div>
+                <div class="star-row"><span class="star-category">🏃 Sports</span><span>★★★★☆</span></div>
+                <div class="star-row"><span class="star-category">🎭 Cultural</span><span>★★★★☆</span></div>
+                <div class="star-row"><span class="star-category">🎨 Arts</span><span>★★★☆☆</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stab-content" id="stab-child-activities">
+          <div class="activities-grid">
+            <div class="activity-card act-cultural"><div class="act-icon">🎭</div><div class="act-info"><h4>Annual Day Performance</h4><p>Bharatanatyam dance – Annual Day 2024</p><div class="act-meta"><span class="act-tag">Cultural</span><span class="act-date">June 2024</span></div></div></div>
+            <div class="activity-card act-academic"><div class="act-icon">📚</div><div class="act-info"><h4>Tamil Essay Competition</h4><p>District-level – 1st Place Winner</p><div class="act-meta"><span class="act-tag">Academic</span><span class="act-date">Feb 2024</span></div></div></div>
+            <div class="activity-card act-social"><div class="act-icon">🤝</div><div class="act-info"><h4>Class Monitor</h4><p>Elected Class Monitor – 2024-25</p><div class="act-meta"><span class="act-tag">Leadership</span><span class="act-date">2024-25</span></div></div></div>
+          </div>
+        </div>
+
+        <div class="stab-content" id="stab-child-prizes">
+          <div class="prizes-timeline">
+            <div class="prize-item prize-gold"><div class="prize-medal">🥇</div><div class="prize-info"><h4>1st Prize – Tamil Essay Writing</h4><p>District Level Competition</p><div class="prize-meta"><span>Feb 2024</span><span class="prize-level">District</span></div></div></div>
+            <div class="prize-item prize-gold"><div class="prize-medal">🏆</div><div class="prize-info"><h4>Best Student Award</h4><p>Annual Day 2024 – All Round</p><div class="prize-meta"><span>June 2024</span><span class="prize-level">School</span></div></div></div>
+            <div class="prize-item prize-silver"><div class="prize-medal">🥈</div><div class="prize-info"><h4>2nd Prize – Cricket Tournament</h4><p>Inter-School Cricket</p><div class="prize-meta"><span>Mar 2024</span><span class="prize-level">Inter-School</span></div></div></div>
+          </div>
+        </div>
+
+        <div class="stab-content" id="stab-child-fees">
+          <div class="form-card-erp">
+            <h4>Fee Status</h4>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:10px 0;border-bottom:1px solid #eee"><span>Tuition – Term 2</span><span class="badge-pill pill-green">Paid</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:10px 0;border-bottom:1px solid #eee"><span>Bus Fee – Term 2</span><span class="badge-pill pill-green">Paid</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;padding:10px 0"><span>Exam Fee</span><span class="badge-pill pill-red">Pending – ₹500</span></div>
+          </div>
+        </div>
+
+        <div class="stab-content" id="stab-child-notices">
+          <div class="form-card-erp">
+            <h4>Recent School Notices</h4>
+            <ul class="notice-list">
+              <li><span class="notice-dot" style="background:#e74c3c"></span><div><div class="notice-title">Half-Yearly Exam – May 22</div><div class="notice-date">May 15, 2025</div></div></li>
+              <li><span class="notice-dot" style="background:var(--saffron)"></span><div><div class="notice-title">Annual Day on June 5</div><div class="notice-date">May 12, 2025</div></div></li>
+              <li><span class="notice-dot" style="background:var(--gold)"></span><div><div class="notice-title">Parent Meeting – May 17</div><div class="notice-date">May 10, 2025</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end erp-main -->
+  </div><!-- end erp-body -->
+  <div id="erp-bottom-nav"></div>
+</div><!-- end erp-view -->
+
+<script src="script.js"></script>
+</body>
+</html>
