@@ -380,3 +380,179 @@ async function submitContact() {
     charEl.textContent = '0/500';
   }
 }
+/* ════════════════════════════════════════════════
+   GALLERY PAGE
+   ════════════════════════════════════════════════ */
+
+const GALLERY_DATA = {
+  2025: {
+    January:  [{ title: 'Pongal Celebration',    date: '14 Jan 2025', icon: '🎉', photos: 12 },
+               { title: 'Republic Day Parade',   date: '26 Jan 2025', icon: '🇮🇳', photos: 8  }],
+    February: [{ title: 'Annual Sports Day',     date: '08 Feb 2025', icon: '⚽', photos: 20 },
+               { title: 'Science Exhibition',    date: '22 Feb 2025', icon: '🔬', photos: 15 }],
+    March:    [{ title: 'Annual Day Celebration',date: '15 Mar 2025', icon: '🎭', photos: 30 }],
+    April:    [{ title: 'Tamil New Year',        date: '14 Apr 2025', icon: '🌺', photos: 10 }],
+    June:     [{ title: 'School Reopening',      date: '02 Jun 2025', icon: '🏫', photos: 6  }],
+    August:   [{ title: 'Independence Day',      date: '15 Aug 2025', icon: '🇮🇳', photos: 9  },
+               { title: 'Drawing Competition',   date: '22 Aug 2025', icon: '🎨', photos: 14 }],
+    September:[{ title: 'Vinayagar Chaturthi',   date: '29 Sep 2025', icon: '🐘', photos: 11 }],
+    October:  [{ title: 'Ayudha Pooja',          date: '01 Oct 2025', icon: '✨', photos: 7  },
+               { title: 'Diwali Celebration',    date: '20 Oct 2025', icon: '🪔', photos: 13 }],
+    November: [{ title: 'Children\'s Day',       date: '14 Nov 2025', icon: '👧', photos: 18 }],
+    December: [{ title: 'Christmas Celebration', date: '24 Dec 2025', icon: '🎄', photos: 10 }]
+  },
+  2024: {
+    January:  [{ title: 'Pongal Celebration',    date: '15 Jan 2024', icon: '🎉', photos: 10 }],
+    March:    [{ title: 'Annual Day 2024',        date: '10 Mar 2024', icon: '🎭', photos: 25 }],
+    August:   [{ title: 'Independence Day 2024', date: '15 Aug 2024', icon: '🇮🇳', photos: 8  }],
+    November: [{ title: 'Children\'s Day 2024',  date: '14 Nov 2024', icon: '👧', photos: 15 }]
+  },
+  2023: {
+    March:    [{ title: 'Annual Day 2023',        date: '12 Mar 2023', icon: '🎭', photos: 22 }],
+    August:   [{ title: 'Independence Day 2023', date: '15 Aug 2023', icon: '🇮🇳', photos: 7  }]
+  }
+};
+
+let selectedYear  = null;
+let selectedMonth = null;
+let selectedEvent = null;
+let lbPhotos      = [];
+let lbIndex       = 0;
+
+function openGalleryPage() {
+  document.getElementById('site-view').style.display    = 'none';
+  document.getElementById('gallery-page').style.display = '';
+  document.getElementById('staff-page').style.display   = 'none';
+  showYearView();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showYearView() {
+  document.getElementById('gallery-year-view').style.display  = '';
+  document.getElementById('gallery-month-view').style.display = 'none';
+  document.getElementById('gallery-event-view').style.display = 'none';
+  document.getElementById('gallery-photo-view').style.display = 'none';
+
+  const grid = document.getElementById('yearGrid');
+  grid.innerHTML = '';
+
+  Object.keys(GALLERY_DATA).sort((a,b) => b - a).forEach(year => {
+    const totalPhotos = Object.values(GALLERY_DATA[year])
+      .flat().reduce((s, e) => s + e.photos, 0);
+    const totalEvents = Object.values(GALLERY_DATA[year]).flat().length;
+    const btn = document.createElement('button');
+    btn.className = 'year-btn';
+    btn.innerHTML = `<span>${year}</span><small>${totalEvents} Events · ${totalPhotos} Photos</small>`;
+    btn.onclick = () => showMonthView(year);
+    grid.appendChild(btn);
+  });
+}
+
+function showMonthView(year) {
+  if (year) selectedYear = year;
+  document.getElementById('gallery-year-view').style.display  = 'none';
+  document.getElementById('gallery-month-view').style.display = '';
+  document.getElementById('gallery-event-view').style.display = 'none';
+  document.getElementById('gallery-photo-view').style.display = 'none';
+  document.getElementById('selected-year-title').textContent  = selectedYear;
+
+  const MONTH_ICONS = {
+    January:'❄️', February:'🌸', March:'🌼', April:'🌺',
+    May:'☀️', June:'🌧️', July:'🌈', August:'🇮🇳',
+    September:'🍂', October:'🪔', November:'🍁', December:'🎄'
+  };
+
+  const grid = document.getElementById('monthGrid');
+  grid.innerHTML = '';
+
+  const months = GALLERY_DATA[selectedYear] || {};
+  Object.keys(months).forEach(month => {
+    const count = months[month].length;
+    const photos = months[month].reduce((s,e) => s + e.photos, 0);
+    const btn = document.createElement('div');
+    btn.className = 'month-btn';
+    btn.innerHTML = `
+      <div class="m-icon">${MONTH_ICONS[month] || '📅'}</div>
+      <div class="m-name">${month}</div>
+      <div class="m-count">${count} event${count>1?'s':''} · ${photos} photos</div>`;
+    btn.onclick = () => showEventView(month);
+    grid.appendChild(btn);
+  });
+}
+
+function showEventView(month) {
+  if (month) selectedMonth = month;
+  document.getElementById('gallery-year-view').style.display  = 'none';
+  document.getElementById('gallery-month-view').style.display = 'none';
+  document.getElementById('gallery-event-view').style.display = '';
+  document.getElementById('gallery-photo-view').style.display = 'none';
+  document.getElementById('selected-month-title').textContent = `${selectedMonth} ${selectedYear}`;
+
+  const grid = document.getElementById('eventLinksGrid');
+  grid.innerHTML = '';
+
+  const events = (GALLERY_DATA[selectedYear] || {})[selectedMonth] || [];
+  events.forEach(ev => {
+    const card = document.createElement('div');
+    card.className = 'event-link-card';
+    card.innerHTML = `
+      <div class="elc-icon">${ev.icon}</div>
+      <div class="elc-title">${ev.title}</div>
+      <div class="elc-date">📅 ${ev.date}</div>
+      <div class="elc-photos">📷 ${ev.photos} Photos</div>`;
+    card.onclick = () => showPhotoView(ev);
+    grid.appendChild(card);
+  });
+}
+
+function showPhotoView(ev) {
+  selectedEvent = ev;
+  document.getElementById('gallery-year-view').style.display  = 'none';
+  document.getElementById('gallery-month-view').style.display = 'none';
+  document.getElementById('gallery-event-view').style.display = 'none';
+  document.getElementById('gallery-photo-view').style.display = '';
+  document.getElementById('selected-event-title').textContent = ev.title;
+  document.getElementById('selected-event-date').textContent  = ev.date;
+
+  const mosaic = document.getElementById('photoMosaic');
+  mosaic.innerHTML = '';
+
+  lbPhotos = [];
+  for (let i = 1; i <= ev.photos; i++) {
+    lbPhotos.push({ icon: ev.icon, label: `${ev.title} – Photo ${i}` });
+    const thumb = document.createElement('div');
+    thumb.className = 'photo-thumb';
+    thumb.style.fontSize = '48px';
+    thumb.innerHTML = `${ev.icon}<div class="pt-label">Photo ${i}</div>`;
+    thumb.onclick = () => openLightbox(i - 1);
+    mosaic.appendChild(thumb);
+  }
+}
+
+function openLightbox(index) {
+  lbIndex = index;
+  document.getElementById('lightbox').classList.add('open');
+  document.getElementById('lb-photo').innerHTML   = `<span style="font-size:80px">${lbPhotos[lbIndex].icon}</span>`;
+  document.getElementById('lb-caption').textContent = lbPhotos[lbIndex].label;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + lbPhotos.length) % lbPhotos.length;
+  document.getElementById('lb-photo').innerHTML    = `<span style="font-size:80px">${lbPhotos[lbIndex].icon}</span>`;
+  document.getElementById('lb-caption').textContent = lbPhotos[lbIndex].label;
+}
+
+/* ════════════════════════════════════════════════
+   STAFF PAGE
+   ════════════════════════════════════════════════ */
+
+function openStaffPage() {
+  document.getElementById('site-view').style.display    = 'none';
+  document.getElementById('gallery-page').style.display = 'none';
+  document.getElementById('staff-page').style.display   = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}

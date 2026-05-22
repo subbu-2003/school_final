@@ -120,14 +120,53 @@ input, select, textarea, button { font-family: var(--font-b); }
 .btn-saffron:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 .btn-full { width: 100%; margin-top: 14px; font-size: 15px; padding: 14px; }
 
-/* ── HIGHLIGHTS ── */
-.highlights { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 20px; padding: 48px 40px; max-width: 1100px; margin: 0 auto; }
-.hcard { background: #fff; border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border-bottom: 4px solid var(--saffron); transition: transform 0.3s ease; }
+/* ══════════════════════════════
+   SECTION HEADING (Highlights)
+   ══════════════════════════════ */
+.section-heading {
+  text-align: center;
+  padding: 52px 20px 0;
+}
+.section-heading h2 {
+  font-family: var(--font-h);
+  font-size: clamp(24px,3.5vw,38px);
+  font-weight: 900; color: #1a0a6e;
+  margin-bottom: 8px;
+}
+.section-heading h2 span { color: var(--saffron); }
+.section-heading p { font-size: 14px; color: #6b7a99; font-weight: 600; }
+.heading-bar {
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg,#e07b27,#c8960c);
+  border-radius: 2px; margin: 12px auto 0;
+}
+
+/* ══════════════════════════════
+   HIGHLIGHTS CARDS
+   ══════════════════════════════ */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+  padding: 40px 40px 48px;
+  max-width: 1100px; margin: 0 auto;
+}
+.hcard {
+  background: #fff; border-radius: var(--radius);
+  padding: 28px 24px; box-shadow: var(--shadow);
+  border-bottom: 4px solid var(--saffron);
+  transition: transform 0.3s ease;
+}
 .hcard:hover { transform: translateY(-4px); }
 .hcard-icon { font-size: 32px; margin-bottom: 14px; }
 .hcard h3 { font-family: var(--font-h); font-size: 16px; color: var(--navy); margin-bottom: 10px; font-weight: 700; }
-.hcard p { font-size: 13.5px; color: #5a6a7a; line-height: 1.7; }
-.section-sep { height: 2px; background: linear-gradient(90deg,transparent,#e2e8f0,transparent); margin: 0 40px; }
+.hcard p  { font-size: 13.5px; color: #5a6a7a; line-height: 1.7; }
+
+.section-sep {
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#e2e8f0,transparent);
+  margin: 0 40px;
+}
 
 /* ── PAGE HEADER ── */
 .page-header { text-align: center; padding: 60px 20px 40px; }
@@ -403,4 +442,397 @@ section#about, section#facilities, section#admissions, section#contact { padding
   .year-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; padding: 0 12px 20px; }
   .month-grid { grid-template-columns: repeat(2,1fr); }
   .photo-mosaic { grid-template-columns: repeat(2,1fr); gap: 6px; }
+}
+
+/* ══════════════════════════════════════════════════
+   COMPLETE MOBILE FIX — paste at BOTTOM of style.css
+   ══════════════════════════════════════════════════ */
+
+/* ── SLIDER IMAGE: full width & height always ── */
+.slider-section { width: 100%; }
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 420px;        /* desktop default */
+  overflow: hidden;
+}
+
+.slider-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  display: block !important;
+}
+
+.slider-image.active { opacity: 1; }
+
+/* ════════════════════════════════════════════════
+   MOBILE — max 768px
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── HEADER: full reset ── */
+  .school-header-bar {
+    display: grid;
+    grid-template-columns: 60px 1fr 44px;
+    grid-template-rows: auto;
+    align-items: start;
+    padding: 12px 12px;
+    gap: 8px;
+    min-height: unset;
+    position: relative;
+  }
+
+  /* Logo — column 1 */
+  .shb-logo-wrap {
+    position: static;
+    transform: none;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .shb-logo-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Center block — column 2 */
+  .shb-center-block {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 !important;
+    text-align: center;
+    align-items: center;
+    gap: 3px;
+  }
+
+  /* School name — MUST be visible */
+  .shb-name {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1a0a6e !important;
+    font-family: var(--font-h);
+    font-weight: 900;
+    word-break: break-word;
+  }
+
+  .shb-name span {
+    color: var(--saffron) !important;
+    display: inline !important;
+  }
+
+  .shb-established {
+    font-size: 9.5px;
+    display: block;
+  }
+
+  .shb-accred {
+    font-size: 9px;
+    display: block;
+  }
+
+  .shb-tags {
+    gap: 4px;
+    margin-top: 3px;
+  }
+
+  .shb-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  /* Hide contact row on mobile */
+  .shb-contact-row-group {
+    display: none !important;
+  }
+
+  /* Hamburger — column 3 */
+  .shb-hamburger-mobile {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 10;
+    position: static;
+    transform: none;
+    margin-top: 4px;
+  }
+
+  .shb-hamburger-mobile span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #1a0a6e;
+    border-radius: 2px;
+  }
+
+/* ══════════════════════════════════════════════════
+   FINAL MOBILE FIX — paste at very BOTTOM of style.css
+   Uses high specificity to override all previous rules
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ════════════════════
+     HEADER — full reset
+     ════════════════════ */
+
+  body .school-header-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 12px 16px 12px 16px !important;
+    position: relative !important;
+    min-height: unset !important;
+    gap: 0 !important;
+  }
+
+  /* Logo — small, top-left */
+  body .school-header-bar .shb-logo-wrap {
+    position: absolute !important;
+    left: 12px !important;
+    top: 12px !important;
+    transform: none !important;
+    z-index: 2 !important;
+  }
+
+  body .school-header-bar .shb-logo-circle {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+  }
+
+  /* Hamburger — top-right */
+  body .shb-hamburger-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    right: 12px !important;
+    top: 14px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    z-index: 10 !important;
+    transform: none !important;
+  }
+
+  body .shb-hamburger-mobile span {
+    display: block !important;
+    width: 24px !important;
+    height: 2.5px !important;
+    background: #1a0a6e !important;
+    border-radius: 2px !important;
+  }
+
+  /* ── CENTER BLOCK: push down below logo ── */
+  body .school-header-bar .shb-center-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 52px 8px 8px 8px !important; /* top pushes content below 44px logo */
+    width: 100% !important;
+    gap: 4px !important;
+  }
+
+  /* School NAME — force visible */
+  body .school-header-bar .shb-center-block .shb-name {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    color: #1a0a6e !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  body .school-header-bar .shb-center-block .shb-name span {
+    display: inline !important;
+    color: #e07b27 !important;
+  }
+
+  body .shb-established {
+    display: block !important;
+    font-size: 10.5px !important;
+    color: #5a6a7a !important;
+    font-weight: 600 !important;
+    visibility: visible !important;
+  }
+
+  body .shb-accred {
+    display: block !important;
+    font-size: 10px !important;
+    color: #8a6a2a !important;
+    visibility: visible !important;
+  }
+
+  body .shb-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+
+  body .shb-tag {
+    font-size: 9.5px !important;
+    padding: 2px 7px !important;
+  }
+
+  body .shb-contact-row-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    margin-top: 4px !important;
+  }
+
+  body .shb-citem {
+    font-size: 9px !important;
+    color: #4a5568 !important;
+    padding: 0 4px !important;
+  }
+
+  body .shb-cdivider {
+    font-size: 9px !important;
+    color: #cbd5e0 !important;
+  }
+
+  /* ── NAVBAR: hide ── */
+  body .navbar {
+    display: none !important;
+  }
+
+  /* ════════════════════
+     MOBILE OVERLAY MENU
+     ════════════════════ */
+  body .mobile-menu-overlay {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: fixed !important;
+    top: 0 !important; left: 0 !important;
+    right: 0 !important; bottom: 0 !important;
+    background: rgba(10,6,42,0.97) !important;
+    z-index: 9999 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  body .mobile-menu-overlay.open {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  body .mobile-menu-close {
+    position: absolute !important;
+    top: 20px !important; right: 24px !important;
+    background: none !important; border: none !important;
+    color: #fff !important; font-size: 28px !important;
+    cursor: pointer !important;
+  }
+
+  body .mobile-nav-links { list-style: none !important; text-align: center !important; }
+  body .mobile-nav-links li { margin: 16px 0 !important; }
+  body .mobile-nav-links a {
+    font-family: 'Cinzel', serif !important;
+    font-size: 20px !important; color: #fff !important;
+    font-weight: 700 !important; cursor: pointer !important;
+  }
+  body .mobile-nav-links a:hover { color: #ffc940 !important; }
+
+  /* ════════════════════
+     SLIDER — centered, proper height
+     ════════════════════ */
+
+  body .slider-section {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  body .slider-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 240px !important;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    overflow: hidden !important;
+    margin: 0 auto !important; /* center */
+  }
+
+  body .slider-container .slider-image {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    opacity: 0 !important;
+    display: block !important;
+  }
+
+  body .slider-container .slider-image.active {
+    opacity: 1 !important;
+  }
+
+  /* Dots — center ── */
+  body .slider-dots {
+    bottom: 50px !important;
+  }
+
+  /* Stats bar */
+  body .hero-stats-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  body .hero-stats-bar .h-stat {
+    flex: 1 1 50% !important;
+    max-width: 50% !important;
+    padding: 8px 6px !important;
+    border-right: 1px solid rgba(255,255,255,0.10) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+    text-align: center !important;
+  }
+
+  body .hero-stats-bar .h-stat:nth-child(2n) { border-right: none !important; }
+  body .hero-stats-bar .h-stat:nth-child(n+3) { border-bottom: none !important; }
+  body .h-stat-num   { font-size: 18px !important; }
+  body .h-stat-label { font-size: 9px !important; }
 }
